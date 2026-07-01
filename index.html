@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPSC-349 Lab 3: Responsive Movies Portal</title>
+    <title>CPSC-349 Lab 1: Movies Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -40,32 +40,55 @@
         <!-- section: Groups related content together into distinct thematic regions of a page -->
         <section id="featured" class="section">
             <h2>Featured Movies</h2>
-
+            
             <div class="movie-grid">
 
                 <!-- article: Defines a self-contained, independent composition like a card, post, or article -->
                 <article class="movie-card">
-                    <h3>The Boys</h3>
-                    <img src="images/the_boys.jpg" alt="The Boys poster" width="200">
-                    <p>A fun and irreverent take on what happens when superheroes abuse their superpowers.</p>
-                    <p><strong>Rating:</strong> 8.7/10</p>
+                    <h3>Dune: Part 2</h3>
+                    <img src="images/Dune2.webp" alt="Dune poster" width="200">
+                    <p>Long live the fighers.</p>
+                    <video width="320" height="240" controls>
+                        <source src="videos/Dune2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio controls>
+                        <source src="audios/Dune2.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <p><strong>Rating:</strong> 9.5/10</p>
                     <a class="btn" href="details.html">View Details</a>
                 </article>
 
                 <article class="movie-card">
-                    <h3>Superman</h3>
-                    <img src="images/superman.jpeg" alt="Superman movie poster" width="200">
-                    <p>An upcoming superhero movie following Superman's journey to reconcile his Kryptonian heritage.
-                    </p>
-                    <p><strong>Rating:</strong> 8.5/10</p>
+                    <h3>Sicario</h3>
+                    <img src="images/Sicario.webp" alt="Sicario poster" width="200">
+                    <p>The border is just another line to cross.</p>
+                    <video width="320" height="240" controls>
+                        <source src="videos/Sicario.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio controls>
+                        <source src="audios/Sicario.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <p><strong>Rating:</strong> 9.0/10</p>
                     <a class="btn" href="details.html">View Details</a>
                 </article>
 
                 <article class="movie-card">
-                    <h3>Avatar: Fire and Ash</h3>
-                    <img src="images/avatar_fire_and_ash.jpeg" alt="Avatar: Fire and Ash movie poster" width="200">
-                    <p>The next chapter in the Avatar franchise exploring the new ash people of Pandora.</p>
-                    <p><strong>Rating:</strong> 8.9/10</p>
+                    <h3>Wake Up Dead Man: A Knives Out Mystery</h3>
+                    <img src="images/KnivesOut3.webp" alt="Knives Out poster" width="200">
+                    <p>A perfectly impossible crime, this case is solvable.</p>
+                    <video width="320" height="240" controls>
+                        <source src="videos/KnivesOut3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio controls>
+                        <source src="audios/KnivesOut3.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <p><strong>Rating:</strong> 9.2/10</p>
                     <a class="btn" href="details.html">View Details</a>
                 </article>
             </div>
@@ -73,89 +96,86 @@
 
         <section id="genres" class="section">
             <h2>Movie Genres</h2>
-
+            <article class="bg">
             <!-- ul: Defines an unordered (bulleted) list of items -->
             <ul>
                 <li>Action</li>
                 <li>Comedy</li>
-                <li>Drama</li>
+                <li>Crime</li>
                 <li>Science Fiction</li>
-                <li>Horror</li>
+                <li>Thriller</li>
+                <li>Mystery</li>
             </ul>
+            </article>
         </section>
 
         <section id="top-movies" class="section">
             <h2>Top Movies Table</h2>
 
             <!-- table: Formats structured tabular data into organized rows, header blocks, and data cells -->
-            <div class="table-wrap">
-                <table class="movies-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Genre</th>
-                            <th>Year</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
+            <table class="movies-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>The Boys</td>
-                            <td>Action / Sci-Fi</td>
-                            <td>2019</td>
-                            <td>8.7</td>
-                        </tr>
-                        <tr>
-                            <td>Superman</td>
-                            <td>Action / Sci-Fi</td>
-                            <td>2025</td>
-                            <td>8.5</td>
-                        </tr>
-                        <tr>
-                            <td>Avatar: Fire and Ash</td>
-                            <td>Science Fiction</td>
-                            <td>2025</td>
-                            <td>8.9</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <tbody>
+                    <tr>
+                        <td>Dune: Part 2</td>
+                        <td>Action / Sci-Fi</td>
+                        <td>2024</td>
+                        <td>9.5</td>
+                    </tr>
+                    <tr>
+                        <td>Sicario</td>
+                        <td>Action / Crime</td>
+                        <td>2015</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Wake Up Dead Man: A Knives Out Mystery</td>
+                        <td>Mystery / Crime</td>
+                        <td>2025</td>
+                        <td>9.2</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="reviews" class="section">
             <h2>Submit a Movie Review (Available Soon)</h2>
-            <p><strong>Status:</strong> This feature is under development and will be available soon!</p>
 
             <!-- form: Wraps interactive controls to capture and submit user input -->
+            <article class="bg">
+            <p><strong>Status:</strong> This feature is under development and will be available soon!</p>
             <form action="#" method="post">
                 <!-- label: Provides a text label linked directly to a form control for accessibility -->
-                <label>Movie Title:</label>
-                <br>
+                <label for="movie-title">Movie Title:</label>
                 <!-- input: Creates basic interactive fields to capture user text or button clicks -->
-                <input type="text" placeholder="Coming soon..." disabled>
-                <br><br>
+                <input type="text" id="movie-title" name="movie-title" placeholder="Coming soon..." disabled>
 
-                <label>Rating:</label>
-                <br>
+                <label for="rating">Rating:</label>
                 <!-- select: Creates a drop-down menu for selecting from multiple options -->
-                <select disabled>
+                <select id="rating" name="rating" disabled>
                     <option value="5">5 - Excellent</option>
                     <option value="4">4 - Good</option>
                     <option value="3">3 - Average</option>
                     <option value="2">2 - Poor</option>
                     <option value="1">1 - Terrible</option>
                 </select>
-                <br><br>
 
                 <label for="review">Your Review:</label>
-                <br>
                 <!-- textarea: Provides a multi-line text input control suitable for longer text entries -->
-                <textarea rows="5" cols="40" placeholder="Write review here once available..." disabled></textarea>
-                <br><br>
+                <textarea id="review" name="review" rows="5" cols="40" placeholder="Write review here once available..."
+                    disabled></textarea>
 
-                <input class="btn" type="submit" value="Submit Review" disabled>
+                <input type="submit" class="btn" value="Submit Review" disabled>
             </form>
+            </article>
         </section>
 
     </main>

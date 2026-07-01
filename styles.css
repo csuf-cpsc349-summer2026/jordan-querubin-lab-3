@@ -11,8 +11,6 @@
 
    element  - Selects all elements of a given type
               Examples: body, header, nav, section, table in HTML -> body, header, nav, section, table in CSS
-
-              
 ================================================== */
 
 /* ==================================================
@@ -28,6 +26,14 @@
     --text-light: #ffffff;
     --border: #d7dde5;
     --card-bg: #fffdf8;
+
+    --bg: #221f1b;
+    --surface: #332e27;
+    --text-default: #e8e1d5;
+    --text-alt: #222222;
+    --accent: #e0a458;
+    --accent-alt: #1e293b;
+
 }
 
 
@@ -49,8 +55,8 @@ html {
 /* Main page background, text color, and font. */
 body {
     margin: 0;
-    color: var(--text-dark);
-    background: var(--csuf-cream);
+    color: var(--text-alt);
+    background: var(--bg);
     font-family: "Trebuchet MS", sans-serif;
 }
 
@@ -63,6 +69,7 @@ body {
 /* Centers content and limits how wide it can get. */
 .container {
     width: 1200px;
+    width: 100%;
     margin-inline: auto;
 }
 
@@ -73,9 +80,9 @@ body {
 
 /* Styles the top banner area. */
 header {
-    background: linear-gradient(120deg, var(--csuf-blue) 10%, var(--csuf-blue-light) 90%);
-    color: var(--text-light);
-    padding: 2.5rem 0;
+    background: linear-gradient(120deg, var(--accent-alt) 20%, var(--text-alt) 80%);
+    color: var(--text-default);
+    padding: 2.5rem 1rem;
 }
 
 /* Styles the main page title inside the header. */
@@ -87,6 +94,7 @@ header h1 {
 /* Styles the tagline below the title. */
 header p {
     /* you can do something here */
+    font-family: "Courier New", monospace;
 }
 
 
@@ -96,20 +104,18 @@ header p {
 
 /* Styles the orange navigation bar. */
 nav {
-    background-color: var(--csuf-orange);
+    background-color: var(--accent);
 }
 
 /* Removes bullets and places links in a row using Flexbox. */
 nav ul {
-    width: 1200px;
     margin: 0;
-    margin-inline: auto;
     padding: 0.5rem 1rem;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 /* Styles each navigation link. */
@@ -125,8 +131,8 @@ nav a {
 /* Effect: changes link appearance when hovered or keyboard-focused. */
 nav a:hover,
 nav a:focus-visible {
-    color: var(--csuf-blue);
-    border-color: var(--csuf-blue);
+    color: var(--text-default);
+    border-color: var(--text-default);
     outline: none;
 }
 
@@ -137,18 +143,13 @@ nav a:focus-visible {
 
 /* Adds vertical spacing around main content. */
 main {
-    padding: 2.5rem 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+    padding: 2.5rem 1rem;
 }
 
 /* Styles each content section like a card. */
 .section {
-    background: #ffffff;
-    border: 1px solid var(--border);
+    background: var(--surface);
+    border: 1px solid var(--bg);
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -157,8 +158,8 @@ img {
 /* Styles section headings. */
 .section h2 {
     margin-top: 0;
-    color: var(--csuf-blue);
-    border-left: 6px solid var(--csuf-orange);
+    color: var(--text-default);
+    border-left: 6px solid var(--accent);
     padding-left: 0.7rem;
 }
 
@@ -170,13 +171,13 @@ img {
 /* Creates a responsive grid layout for movie cards. */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.25rem;
 }
 
 /* Styles each movie card. */
 .movie-card {
-    background: var(--card-bg);
+    background: var(--text-default);
     border: 1px solid #e7dacc;
     border-radius: 12px;
     padding: 1rem;
@@ -207,6 +208,13 @@ img {
     border: 1px solid #e1e5ea;
 }
 
+.movie-card video,
+.movie-card audio {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 
 /* ==================================================
    8. Buttons
@@ -215,13 +223,13 @@ img {
 /* Styles links and inputs that should look like buttons. */
 .btn {
     display: inline-block;
-    align-self: center;
+    align-self: center; 
     border: 0;
     border-radius: 100px;
     padding: 0.55rem 1rem;
     text-decoration: none;
-    background-color: var(--csuf-blue);
-    color: var(--text-light);
+    background-color: var(--accent-alt);
+    color: var(--text-default);
     cursor: pointer;
 }
 
@@ -231,14 +239,19 @@ img {
    The #reviews selector targets only the reviews section.
 ================================================== */
 
-
-
+/* Limits the width of the review form. */
+#reviews form {
+    max-width: 600px;
+    margin: 0.5rem auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /* Styles labels inside the reviews section. */
 #reviews label {
-    display: inline-block;
-    margin-bottom: 0.35rem;
-    font-weight: 700;
+    margin-top: 0.5rem;
+    color: var(--text-alt);
 }
 
 /* Styles text inputs, dropdowns, and textareas in the form. */
@@ -246,11 +259,12 @@ img {
 #reviews select,
 #reviews textarea {
     width: 100%;
-    border: 1px solid #bcc7d3;
+    border: 1px solid var(--accent-alt);
     border-radius: 8px;
     padding: 0.65rem 0.75rem;
-    background-color: #f9fbfd;
-    color: #334a60;
+    background-color: var(--text-light);
+    color: var(--text-alt);
+    font-family: 'Courier New', monospace;
 }
 
 /* Gives the textarea a larger height and vertical resizing. */
@@ -266,14 +280,32 @@ img {
 .btn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+    margin: 0.5rem 0;
 }
 
 /* Makes the review form button orange instead of blue. */
-#reviews input[type="submit"] {
-    background-color: var(--csuf-orange);
-    color: #1f2125;
-    display: block;
-    margin-inline: auto;
+#reviews .btn {
+    background-color: var(--accent);
+    color: var(--text-alt);
+}
+
+#reviews p {
+    font-size: 0.9rem;
+    color: #5f2d00;
+    background-color: #fff2e3;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #f2cc9f;
+    max-width: 600px;
+    margin: 0.5rem auto;
+}
+
+#reviews .bg {
+    background-color: var(--text-default);
+    border: 1px solid var(--bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Styles the message saying the review feature is not ready. */
@@ -294,21 +326,17 @@ img {
 /* Styles the main movie table. */
 .movies-table {
     width: 100%;
-    border-collapse: collapse;
-    border: 1px solid var(--border);
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--accent-alt);
     border-radius: 10px;
     overflow: hidden;
 }
 
-.table-wrap {
-    width: 100%;
-    overflow-x: auto;
-}
-
 /* Styles the table header row. */
 .movies-table thead {
-    background: var(--csuf-blue);
-    color: var(--text-light);
+    background: var(--accent-alt);
+    color: var(--text-default);
 }
 
 /* Adds padding and borders to table cells. */
@@ -316,14 +344,30 @@ img {
 .movies-table td {
     text-align: left;
     padding: 0.75rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--text-default);
+}
+
+.movies-table tbody tr {
+    background-color: var(--text-default);
 }
 
 /* Adds alternating row color for readability. */
 .movies-table tbody tr:nth-child(even) {
-    background-color: #f7fafc;
+    background-color: var(--text-light);
 }
 
+.movies-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* movie genres */
+.bg {
+    background-color: var(--text-default);
+    border: 1px solid var(--bg);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
 
 /* ==================================================
    11. Footer
@@ -331,7 +375,7 @@ img {
 
 /* Styles the footer at the bottom of the page. */
 footer {
-    background-color: var(--csuf-blue);
+    background-color: var(--accent-alt);
     color: var(--text-light);
     text-align: center;
     padding: 1.5rem 1rem;
@@ -353,9 +397,6 @@ footer a:focus-visible {
     color: #ffffff;
 }
 
-
-
-/* DEMO: Uncomment to see effect */
 @media (max-width: 640px) {
     .container {
         width: 95%;
@@ -390,7 +431,6 @@ footer a:focus-visible {
     }
 }
 
-/* TODO: Add responsive design for iPads */
 @media (max-width: 1024px) {
     .container {
         width: 95%;
